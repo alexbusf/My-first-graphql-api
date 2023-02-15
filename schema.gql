@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Characteristics {
+  type: String!
+}
+
+type MessageType {
+  category: String!
+  title: String!
+  body: String!
+  characteristics: Characteristics!
+}
+
+input CharacteristicsInput {
+  type: String!
+}
+
+input MessageInputType {
+  category: String!
+  title: String!
+  body: String!
+  characteristics: CharacteristicsInput!
+}
+
+type Query {
+  message: [MessageType!]!
+  messageome(id: String!): MessageType!
+}
+
+type Mutation {
+  createMessage(createMessageInput: MessageInputType!): MessageType!
+  updateMessage(id: String!, updateMessageInput: MessageInputType!): MessageType!
+  removeMessage(id: String!): MessageType!
+}
